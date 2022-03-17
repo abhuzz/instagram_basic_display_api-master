@@ -16,6 +16,9 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
+  String client_Id = '';
+  String client_Secret = '';
+  String redirect_Url = '';
   List<MediaItem>? _mediaList;
   InstagramUser? _instagramUser;
 
@@ -83,7 +86,7 @@ class _MyAppState extends State<MyApp> {
             ElevatedButton(
                 child: Text("askToken"),
                 onPressed: () {
-                  InstagramBasicDisplayApi.askInstagramToken();
+                  InstagramBasicDisplayApi.askInstagramToken(client_Id, client_Secret, redirect_Url);
                 }),
             ElevatedButton(
                 child: Text("logout"),

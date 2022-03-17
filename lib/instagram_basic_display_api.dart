@@ -58,8 +58,8 @@ class InstagramBasicDisplayApi {
     return broadcastInstagramUserStream?.first;
   }
 
-  static Future<void> askInstagramToken() {
-    return _channel.invokeMethod('askInstagramToken');
+  static Future<void> askInstagramToken(String client_Id,String client_Secret,String redirect_Url) {
+    return _channel.invokeMethod('askInstagramToken',{"client_Id": client_Id,"client_Secret": client_Secret,"redirect_Url": redirect_Url});
   }
 
   static Future<List<MediaItem>?> getMedias() async {
