@@ -39,16 +39,16 @@ class InstagramBasicDisplayApi(
         activity = null
     }
 
-    fun askInstagramToken(){
+    fun askInstagramToken(String client_Id,String client_Secret,String redirect_Url){
         if (activity == null) {
             errorUpdated("NULL_ACTIVITY")
             return
         }
 
         try {
-            clientId = "BuildConfig.INSTAGRAM_CLIENT_ID"
-            clientSecret = "BuildConfig.INSTAGRAM_CLIENT_SECRET"
-            redirectUri = "BuildConfig.REDIRECT_URI"
+            clientId = client_Id
+            clientSecret = client_Secret
+            redirectUri = redirect_Url
 
             val intent = AccessTokenActivity.createIntent(
                 activity!!, clientId, clientSecret, redirectUri
